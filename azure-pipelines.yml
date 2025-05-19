@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: MyAgent  # Replace with your self-hosted agent pool name if different
+  name: MyAgent  
 
 steps:
 - task: Maven@3
@@ -10,3 +10,4 @@ steps:
     mavenPomFile: 'pom.xml'
     goals: 'clean install'
     publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
